@@ -6,15 +6,11 @@ export default function App() {
 
   console.log("Component rendered");
 
-  useEffect(
-    function () {
-      console.log("Effect function ran");
-      // fetch("https://swapi.dev/api/people/1")
-      //   .then((response) => response.json())
-      // .then((data) => setStarWarsData(data));
-    },
-    [count]
-  );
+  useEffect(() => {
+    fetch("https://swapi.dev/api/people/1")
+      .then((response) => response.json())
+    .then((data) => setStarWarsData(data));
+  }, [count]);
 
   return (
     <div>
